@@ -163,7 +163,7 @@ public class Facturacion {
         Consumo consumoElegido;
 
         do{
-            System.out.println("Por favor, escriba una opcion de consumo entre A, M y C");
+            System.out.println("Por favor, escriba una opcion de consumo entre A, B y C");
             Scanner in = new Scanner(System.in);
             String inputUsuario = in.nextLine();
             validadorInputConsumo = true;
@@ -171,14 +171,14 @@ public class Facturacion {
                 case "A":
                     consumoElegido = Consumo.A;
                     break;
-                case "M":
-                    consumoElegido = Consumo.M;
+                case "B":
+                    consumoElegido = Consumo.B;
                     break;
                 case "C":
                     consumoElegido = Consumo.C;
                     break;
                 default:
-                    System.out.println("Debe elegir entre A, M y C");
+                    System.out.println("Debe elegir entre A, B y C");
                     consumoElegido = null;
                     validadorInputConsumo = false;
 
@@ -324,9 +324,9 @@ public class Facturacion {
 
         listaElectrodomesticos.calcularTotales();
 
-        System.out.println("Precio Tototal Televisores: $" + new BigDecimal(listaElectrodomesticos.darPrecioTelevisores()));
-        System.out.println("Precio Tototal Neveras: $" + new BigDecimal(listaElectrodomesticos.darPrecioNeveras()));
-        System.out.println("Precio Tototal Electrodomesticos: $" +  new BigDecimal(listaElectrodomesticos.darPrecioElectrodomesticos()));
+        System.out.println("Precio Total Televisores: $" + new BigDecimal(listaElectrodomesticos.darPrecioTelevisores()));
+        System.out.println("Precio Total Neveras: $" + new BigDecimal(listaElectrodomesticos.darPrecioNeveras()));
+        System.out.println("Precio Total Electrodomesticos: $" +  new BigDecimal(listaElectrodomesticos.darPrecioElectrodomesticos()));
 
     }
 

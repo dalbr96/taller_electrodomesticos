@@ -1,0 +1,21 @@
+
+?
+facturacion.iml,1\4\14be162dcaf27bb1b4daab9f079563c385157715
+T
+$src/main/java/constants/Consumo.java,1\5\15ce4275fd045171d1b8b1bfeb79297b49b16822
+X
+(src/main/java/constants/Procedencia.java,f\7\f757e115f6096fe3befea92bf526fe1c453a7b09
+F
+src/main/java/App.java,6\7\67512e2f04487cca15d6699055f74a51de1a9eb4
+X
+(src/main/java/servicios/Facturacion.java,8\d\8dff40225b752cb96c4d600b2eb1b7d30ca45eae
+\
+,src/main/java/servicios/GestorColeccion.java,4\4\441cfe8fa58fe95f8cfb48be32fd6a632c978855
+P
+ src/main/java/models/Nevera.java,b\c\bc360526d90f2a9b4b1436421e2911c37757e198
+S
+#src/main/java/models/Televisor.java,b\5\b52edd9fb1856fdc82f8f031422022ef7da774d1
+Z
+*src/main/java/models/Electrodomestico.java,d\3\d385cb2373e41d255de0d474d30f88a12d918b3b
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

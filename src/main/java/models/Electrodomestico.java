@@ -107,9 +107,9 @@ public class Electrodomestico {
             switch (darConsumo()){
                 case A:
                     return 450000;
-                case C:
+                case B:
                     return 350000;
-                case M:
+                case C:
                     return 250000;
                 default:
                     System.out.println("Por favor ingrese un consumo válido");
