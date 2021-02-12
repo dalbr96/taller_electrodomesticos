@@ -9,10 +9,19 @@ import models.Electrodomestico;
 import models.Nevera;
 import models.Televisor;
 
+/**
+ * Clase encargada de la interaccion con el usuario
+ */
 public class Facturacion {
 
     private static GestorColeccion listaElectrodomesticos = new GestorColeccion();
 
+    /**
+     * Pide al usuario el numero de productos.
+     * El input debe ser un numero entero mayor a 0
+     * El programa seguira preguntando por input hasta que esta condicion se cumpla
+     * @return numeroProductos - Tipo int
+     */
     public static int pedirNumeroDeProductos(){
         boolean numberCondition = false;
         int numeroProductos = 0;
@@ -38,6 +47,38 @@ public class Facturacion {
         return numeroProductos;
     }
 
+    /**
+     * Crea la cantidad de electrodomesticos especificada por el usuario
+     * @param numeroDeProductos
+     * Invoca los metodos preguntarElectrodomestico(), agregarElectrodomestico(), crearTelevisor(),
+     * crearNevera() y crearElectrodomestico()
+     */
+    public static void crearElectrodomesticos(int numeroDeProductos){
+
+        for(int i = 0; i < numeroDeProductos; i++){
+            switch (preguntarElectrodomestico()){
+                case 1:
+                    listaElectrodomesticos.agregarElectrodomestico(crearTelevisor());
+                    break;
+                case 2:
+                    listaElectrodomesticos.agregarElectrodomestico(crearNevera());
+                    break;
+                case 3:
+                    listaElectrodomesticos.agregarElectrodomestico(crearElectrodomestico());
+                    break;
+                default:
+                    break;
+
+            }
+        }
+    }
+
+    /**
+     * PreguntarElectrodomestico
+     * Le pregunta al usuario el electrodomestico a agregar.
+     * No se deja de ejecutar hasta que el usuario ingrese una opcion valida
+     * @return opcionEscogida - Tipo int
+     */
     public static int preguntarElectrodomestico(){
 
         boolean validadorInputElectrodomestico = false;
@@ -69,6 +110,11 @@ public class Facturacion {
         return opcionElectrodomestico;
     }
 
+    /**
+     * Crea un objeto de tipo Electrodomestico
+     * @return electrodomesticoCreado - Tipo Electrodomestico
+     * Invoca a los metodos preguntarTipoDeConsumo() y preguntarProcedencia()
+     */
     public static Electrodomestico crearElectrodomestico(){
 
         Consumo consumo = preguntarTipoDeConsumo();
@@ -77,6 +123,12 @@ public class Facturacion {
         return new Electrodomestico(consumo, procedencia);
     }
 
+    /**
+     * Crea un objeto de tipo Televisor
+     * @return televisorCreado - Tipo Televisor
+     * Invoca a los metodos preguntarTipoDeConsumo(), preguntarProcedencia(), preguntarTamanhoTv() y
+     * preguntarTDT()
+     */
     public static Electrodomestico crearTelevisor(){
 
         Consumo consumo = preguntarTipoDeConsumo();
@@ -87,6 +139,11 @@ public class Facturacion {
         return new Televisor(consumo, procedencia, tamanho, tdt);
     }
 
+    /**
+     * Crea un objeto de tipo Nevera
+     * @return NeveraCreado - Tipo Nevera
+     * Invoca a los metodos preguntarTipoDeConsumo(), preguntarProcedencia() y preguntarCapacidad()
+     */
     public static Electrodomestico crearNevera(){
 
         Consumo consumo = preguntarTipoDeConsumo();
@@ -96,6 +153,11 @@ public class Facturacion {
         return new Nevera(consumo, procedencia, capacidad);
     }
 
+    /**
+     * Le pregunta al usuario el tipo de consumo del electrodomestico
+     * Se ejecuta hasta que el usuario no ingrese una opcion valida
+     * @return consumo - Tipo Consumo
+     */
     public static Consumo preguntarTipoDeConsumo(){
         boolean validadorInputConsumo;
         Consumo consumoElegido;
@@ -126,6 +188,11 @@ public class Facturacion {
         return consumoElegido;
     }
 
+    /**
+     * Le pregunta al usuario la procedencia del electrodomestico
+     * Se ejecuta hasta que el usuario no ingrese una opcion valida
+     * @return procedencia - Tipo Prodecencia
+     */
     public static Procedencia preguntarProcedencia(){
         boolean validadorInputProcedencia;
         Procedencia procedenciaElegida;
@@ -156,6 +223,11 @@ public class Facturacion {
         return procedenciaElegida;
     }
 
+    /**
+     * Pregunta al usuario el tamanho del tv
+     * Se ejecuta hasta que el usuario ingresa un numero entero mayor a 0
+     * @return tamanho - Tipo int
+     */
     public static int preguntarTamanhoTv(){
         boolean validadorTamanho = false;
         int tamanho = 0;
@@ -181,6 +253,11 @@ public class Facturacion {
         return tamanho;
     }
 
+    /**
+     * Pregunta al usuario si el tv tiene sintonizador de TDT
+     * Se ejecuta hasta que el usuario ingresa una opcion valida
+     * @return tieneTDT - Tipo boolean
+     */
     public static boolean preguntarTDT(){
         boolean validadorTdt;
         boolean tieneTDT;
@@ -210,6 +287,11 @@ public class Facturacion {
         return tieneTDT;
     }
 
+    /**
+     * Pregunta al usuario la capacidad de la nevera
+     * Se ejecuta hasta que el usuario ingresa un numero entero mayor a 0
+     * @return litros - Tipo int
+     */
     public static int preguntarCapacidad(){
         boolean validadorCapacidad = false;
         int capacidad = 0;
@@ -235,26 +317,9 @@ public class Facturacion {
         return capacidad;
     }
 
-    public static void crearElectrodomesticos(int numeroDeProductos){
-
-        for(int i = 0; i < numeroDeProductos; i++){
-            switch (preguntarElectrodomestico()){
-                case 1:
-                    listaElectrodomesticos.agregarElectrodomestico(crearTelevisor());
-                    break;
-                case 2:
-                    listaElectrodomesticos.agregarElectrodomestico(crearNevera());
-                    break;
-                case 3:
-                    listaElectrodomesticos.agregarElectrodomestico(crearElectrodomestico());
-                    break;
-                default:
-                    break;
-
-            }
-        }
-    }
-
+    /**
+     * Imprime el total de precios categorizado por: Televisores, Neveras y otros Electrodomesticos
+     */
     public static void imprimirPrecios(){
 
         listaElectrodomesticos.calcularTotales();
@@ -266,3 +331,5 @@ public class Facturacion {
     }
 
 }
+
+
