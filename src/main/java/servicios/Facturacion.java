@@ -79,7 +79,7 @@ public class Facturacion {
      * No se deja de ejecutar hasta que el usuario ingrese una opcion valida
      * @return opcionEscogida - Tipo int
      */
-    public static int preguntarElectrodomestico(){
+    private static int preguntarElectrodomestico(){
 
         boolean validadorInputElectrodomestico = false;
         int opcionElectrodomestico = 0;
@@ -115,7 +115,7 @@ public class Facturacion {
      * @return electrodomesticoCreado - Tipo Electrodomestico
      * Invoca a los metodos preguntarTipoDeConsumo() y preguntarProcedencia()
      */
-    public static Electrodomestico crearElectrodomestico(){
+    private static Electrodomestico crearElectrodomestico(){
 
         Consumo consumo = preguntarTipoDeConsumo();
         Procedencia procedencia = preguntarProcedencia();
@@ -129,7 +129,7 @@ public class Facturacion {
      * Invoca a los metodos preguntarTipoDeConsumo(), preguntarProcedencia(), preguntarTamanhoTv() y
      * preguntarTDT()
      */
-    public static Electrodomestico crearTelevisor(){
+    private static Electrodomestico crearTelevisor(){
 
         Consumo consumo = preguntarTipoDeConsumo();
         Procedencia procedencia = preguntarProcedencia();
@@ -144,7 +144,7 @@ public class Facturacion {
      * @return NeveraCreado - Tipo Nevera
      * Invoca a los metodos preguntarTipoDeConsumo(), preguntarProcedencia() y preguntarCapacidad()
      */
-    public static Electrodomestico crearNevera(){
+    private static Electrodomestico crearNevera(){
 
         Consumo consumo = preguntarTipoDeConsumo();
         Procedencia procedencia = preguntarProcedencia();
@@ -158,7 +158,7 @@ public class Facturacion {
      * Se ejecuta hasta que el usuario no ingrese una opcion valida
      * @return consumo - Tipo Consumo
      */
-    public static Consumo preguntarTipoDeConsumo(){
+    private static Consumo preguntarTipoDeConsumo(){
         boolean validadorInputConsumo;
         Consumo consumoElegido;
 
@@ -193,7 +193,7 @@ public class Facturacion {
      * Se ejecuta hasta que el usuario no ingrese una opcion valida
      * @return procedencia - Tipo Prodecencia
      */
-    public static Procedencia preguntarProcedencia(){
+    private static Procedencia preguntarProcedencia(){
         boolean validadorInputProcedencia;
         Procedencia procedenciaElegida;
 
@@ -228,7 +228,7 @@ public class Facturacion {
      * Se ejecuta hasta que el usuario ingresa un numero entero mayor a 0
      * @return tamanho - Tipo int
      */
-    public static int preguntarTamanhoTv(){
+    private static int preguntarTamanhoTv(){
         boolean validadorTamanho = false;
         int tamanho = 0;
         do{
@@ -258,7 +258,7 @@ public class Facturacion {
      * Se ejecuta hasta que el usuario ingresa una opcion valida
      * @return tieneTDT - Tipo boolean
      */
-    public static boolean preguntarTDT(){
+    private static boolean preguntarTDT(){
         boolean validadorTdt;
         boolean tieneTDT;
         do{
@@ -292,7 +292,7 @@ public class Facturacion {
      * Se ejecuta hasta que el usuario ingresa un numero entero mayor a 0
      * @return litros - Tipo int
      */
-    public static int preguntarCapacidad(){
+    private static int preguntarCapacidad(){
         boolean validadorCapacidad = false;
         int capacidad = 0;
         do{
