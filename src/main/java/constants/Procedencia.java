@@ -1,2 +1,6 @@
-package constants;public enum Procedencia {
+package constants;
+
+public enum Procedencia {
+    NACIONAL,
+    IMPORTADO
 }

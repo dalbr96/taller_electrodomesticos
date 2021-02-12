@@ -1,9 +1,10 @@
+package servicios;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 import constants.Consumo;
 import constants.Procedencia;
-import gestores.GestorColeccion;
 import models.Electrodomestico;
 import models.Nevera;
 import models.Televisor;
@@ -94,7 +95,7 @@ public class Facturacion {
 
         return new Nevera(consumo, procedencia, capacidad);
     }
-    
+
     public static Consumo preguntarTipoDeConsumo(){
         boolean validadorInputConsumo;
         Consumo consumoElegido;
@@ -258,19 +259,10 @@ public class Facturacion {
 
         listaElectrodomesticos.calcularTotales();
 
-        System.out.println("Precio Tototal Televisores: $" + listaElectrodomesticos.darPrecioTelevisores());
-        System.out.println("Precio Tototal Neveras: $" + listaElectrodomesticos.darPrecioNeveras());
-        System.out.println("Precio Tototal Electrodomesticos: $" + listaElectrodomesticos.darPrecioElectrodomesticos());
+        System.out.println("Precio Tototal Televisores: $" + new BigDecimal(listaElectrodomesticos.darPrecioTelevisores()));
+        System.out.println("Precio Tototal Neveras: $" + new BigDecimal(listaElectrodomesticos.darPrecioNeveras()));
+        System.out.println("Precio Tototal Electrodomesticos: $" +  new BigDecimal(listaElectrodomesticos.darPrecioElectrodomesticos()));
 
     }
 
-    public static void main(String[] args){
-
-        int numeroDeProductos = pedirNumeroDeProductos();
-
-        crearElectrodomesticos(numeroDeProductos);
-
-        imprimirPrecios();
-
-    }
 }

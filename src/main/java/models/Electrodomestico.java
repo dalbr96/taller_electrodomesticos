@@ -89,7 +89,7 @@ public class Electrodomestico {
      */
     public float calcularPrecioProcedencia() {
         switch (darProcedencia()) {
-            case NACIOMAL:
+            case NACIONAL:
                 return 250000;
             case IMPORTADO:
                 return 350000;
